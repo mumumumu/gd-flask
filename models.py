@@ -57,9 +57,6 @@ class MenuItem(BaseModel):
     def description(self):
         return self.item.description
 
-    def __unicode__(self):
-        return self.item.name
-
 
 def create_tables():
     Category.create_table()
