@@ -1,0 +1,8 @@
+{% extends "admin/master.html" %}
+{% block body %}
+{{ super() }}
+<form method="POST" action="">
+    <div style="float: left">{{ form.password }}</div>
+    <input type="submit" value="Login" style="margin-left: 10px; margin-top: 5px;"/>
+</form>
+{% endblock  body %}

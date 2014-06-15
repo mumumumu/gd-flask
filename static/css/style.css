@@ -1,0 +1,181 @@
+@import url("http://fonts.googleapis.com/css?family=Lato");
+@import url("http://fonts.googleapis.com/css?family=Quicksand");
+/* Set up document
+-----------------------------------------------------------------------------*/
+body {
+  font-family: 'Lato';
+  background-color: #ac3c5a;
+  color: #444;
+  font-size: 18px;
+  margin: 0px;
+}
+nav {
+  width: 700px;
+  height: 60px;
+  margin: auto;
+  list-style-type: none;
+  background-color: #472b5d;
+  padding: 10px;
+  position: relative;
+}
+nav ul {
+  /*text-align: center;*/
+  /*margin-left: -60px;*/
+}
+nav li {
+  width: 120px;
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+}
+nav li a {
+  text-decoration: none;
+  color: #faf9f0;
+}
+nav li a:hover {
+  text-decoration: underline;
+  color: #f5861e;
+}
+.selected {
+  text-decoration: underline;
+  color: #f5861e;
+}
+.left-arrow {
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid transparent;
+  border-top: 10px solid #000;
+  top: 12px;
+  left: -10px;
+  position: relative;
+}
+.right-arrow {
+  width: 0px;
+  height: 0px;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #000;
+  top: 2px;
+  left: 700px;
+  position: relative;
+}
+h1 {
+  text-align: center;
+}
+.container {
+  width: 500px;
+  margin: auto;
+  margin-top: -10px;
+  overflow: hidden;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: #faf9f0;
+  padding-bottom: 50px;
+  box-shadow: 0px 0px 5px #000;
+}
+.content p {
+  margin-bottom: 20px;
+}
+#details {
+  white-space: pre;
+  margin-top: -40px;
+  font-size: 20px;
+  color: #892143;
+}
+#intro {
+  margin-top: 50px;
+}
+#hours {
+  text-align: center;
+}
+.index {
+  text-align: left;
+}
+.price-header {
+  text-align: right;
+  width: 80px;
+}
+.price {
+  text-align: right;
+}
+.spicy {
+  color: #f00;
+}
+table {
+  width: 500px;
+}
+th {
+  padding-top: 50px;
+}
+tr {
+  padding-top: 15px;
+}
+.hot {
+  width: 18px;
+  height: 18px;
+  background-image: url("../images/hot.png");
+  margin-left: -20px;
+  margin-top: 2px;
+  position: absolute;
+}
+.tooltip {
+  outline: none;
+  text-decoration: underline;
+}
+.tooltip span {
+  z-index: 10;
+  display: none;
+  padding: 14px 20px;
+  margin-top: -30px;
+  margin-left: 28px;
+  width: 240px;
+}
+.tooltip:hover {
+  text-decoration: none;
+}
+.tooltip:hover span {
+  display: inline;
+  position: absolute;
+  color: #111;
+  border: 1px solid #dca;
+  background: #fffaf0;
+}
+a {
+  color: #00b7ff;
+}
+/* Toggle Switch
+------------------------------------------------------------------------------*/
+input#gluten-free-checkbox[type=checkbox]:checked ~ div table tr:not(.gluten-free):not(.category-row) {
+  display: none;
+}
+.ch-name {
+  visibility: hidden;
+}
+input#language-checkbox[type=checkbox]:checked ~ div table tr td span.en-name {
+  display: none;
+}
+input#language-checkbox[type=checkbox]:checked ~ div table tr td span.ch-name {
+  visibility: visible;
+}
+/* Header 
+------------------------------------------------------------------------------*/
+header {
+  font-family: 'Quicksand';
+  padding: 40px 0px;
+  color: #fff;
+  background-color: #ffbf2d;
+  font-size: 35px;
+  text-align: center;
+}
+/* Footer
+------------------------------------------------------------------------------*/
+footer {
+  width: 700px;
+  margin: auto;
+  padding: 10px 0px;
+  border-top: 2px dotted #ccc;
+  box-shadow: 0px 4px 10px #000;
+  color: #faf9f0;
+  background-color: #892143;
+  font-size: 13px;
+  text-align: center;
+}

@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>Golden Duck</title> 
+    <link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet"></link>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"></link>
+    <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet"></link>
+    <link href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}" rel="stylesheet"></link>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+</head>
+<body>
+<header>
+    <h1>Golden Duck</h1>
+    <p id='details'>
+    1840 Maple Road, Williamsville NY
+    (716) 639-8888
+    </p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href='/'>Home</a></li>
+        {% for menu in menus %}
+        <li><a href='/menu/{{ menu.slug }}'>{{ menu.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <div class="left-arrow"></div>
+    <div class="right-arrow"></div>
+</nav>
+
+<div class='container'>
+    <div class='main-content'>
+        {% block content %}
+        <p id="intro">
+            The Golden Duck is a family owned and operated chinese restaurant located in Williamsville, New York. 
+            In addition to the regular menu, many traditional dishes are available daily.
+            <br/><br/>
+            Come visit us on Saturday or Sunday for lunch to enjoy Dim Sum and our popular Taiwanese Mongolian Bar-B-Q Buffet.
+        </p>
+        <p id="hours">
+            <b>Restaurant Hours</b>        
+            <br/>
+            Tuesday - Thursday: 11:30am - 9:30pm
+            <br/>
+            Friday: 11:30am - 10:30pm
+            <br/>
+            Saturday: 12:00pm - 10:30pm
+            <br/>
+            Sunday: 12:00pm - 9:30pm 
+        </p>
+        <div class="owl-carousel">
+            <img src="{{ url_for('static', filename='images/front.jpg') }}">
+            <img src="{{ url_for('static', filename='images/room.jpg') }}">
+        </div>
+        {% endblock %}
+    </div>
+</div>
+
+<footer>
+    <small>Copyright &copy; 2014 Golden Duck, Inc. All rights reserved.</small>
+</footer>
+
+<script>
+$(document).ready(function() {
+    $(".owl-carousel").owlCarousel({
+        center: true,
+        autoHeight: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        loop: true,
+        items: 1,
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<h1>{{ menu_name }} Menu</h1>
+{% block description %}
+{% endblock %}
+<p>
+    Items marked with a <img src="{{ url_for('static', filename='images/hot.png') }}"> are spicy.
+</p>
+<div>
+    <table>
+    {% for category, items in menu.items() %}
+        <tr class="category-row">
+            <th class="index-header"></th>
+            <th class="category-header">{{ category }}</th>
+            {% if menu_name == 'takeout' %}
+            <th class="price-header">Pt.</th>
+            <th class="price-header">Qt.</th>
+            {% endif %}
+        </tr>
+        {% for item in items %}
+        <tr class="{% if item.spicy %}spicy{% endif %} {% if item.gluten_free %}gluten-free{% endif %}">
+            <td class="index">{% if item.spicy %}<span class="hot"></span>{% endif %}{{ item.menu_index }}</td>
+            <td><span class="en-name {% if item.description %}tooltip{% endif %}">{{ item.name }}{% if item.description %}<span>{{ item.description }}</span>{% endif %}</span><span class="ch-name">{{ item.chinese_name }}</span></td>
+            <td class="price">{% if item.price_small %}{{ "%0.2f"|format(item.price_small) }}{% endif %}</td>
+            <td class="price">{{ "%0.2f"|format(item.price) }}</td>
+        </tr>
+        {% endfor %}
+    {% endfor %}
+    </table>
+</div>
+{% endblock %}
