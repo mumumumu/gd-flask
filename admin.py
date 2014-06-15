@@ -2,8 +2,8 @@ from flask import request, session
 from flask.ext.admin import AdminIndexView, expose
 from flask.ext.admin.contrib.peewee import ModelView
 from wtforms import Form, PasswordField
+from .models import *
 
-from models import *
 
 class LoginForm(Form):
     password = PasswordField()

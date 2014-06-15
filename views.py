@@ -1,8 +1,8 @@
-from app import app
+from .app import app
 from flask import render_template
 from flask.ext.admin import Admin
-from admin import MyModelView, MyAdminIndexView
-from models import Menu, Item, MenuItem, Category
+from .admin import MyModelView, MyAdminIndexView
+from .models import Menu, Item, MenuItem, Category
 from collections import OrderedDict
 
 
