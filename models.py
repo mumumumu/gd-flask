@@ -25,8 +25,8 @@ class Item(BaseModel):
     name = CharField(max_length=50)
     spicy = BooleanField(default=False)
     gluten_free = BooleanField(default=False)
-    description = TextField()
-    chinese_name = CharField(max_length=50)
+    description = TextField(null=True)
+    chinese_name = CharField(max_length=50, null=True)
 
 
 class MenuItem(BaseModel):
